@@ -29,7 +29,7 @@ parameters:
 
 stages:
 - stage: test
-  dependsOn: [build]
+  dependsOn: [build_x64]
   jobs:
       - ${{ each version in parameters.versions }}:
         - ${{ each image in parameters.test_images }}:

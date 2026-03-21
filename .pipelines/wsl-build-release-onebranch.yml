@@ -59,6 +59,11 @@ extends:
       parameters:
         rs_prerelease_only: false
 
+    - template: package-stage.yml@self
+      parameters:
+        isRelease: true
+        packageVersion: ${{ iif(eq(parameters.testVersion, ''), variables['Build.SourceBranchName'], parameters.testVersion) }}
+
     - template: flight-stage.yml@self
       parameters:
         publishPackage: ${{ iif(eq(parameters.testVersion, ''), true, false) }}

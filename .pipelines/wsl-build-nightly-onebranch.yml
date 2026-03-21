@@ -50,3 +50,8 @@ extends:
     - template: test-stage.yml@self
       parameters:
         rs_prerelease_only: false
+
+    - template: package-stage.yml@self
+      parameters:
+        isRelease: false
+        isNightly: true
