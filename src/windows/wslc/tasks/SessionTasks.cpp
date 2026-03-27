@@ -44,8 +44,7 @@ void AttachToSession(CLIExecutionContext& context)
 
 void CreateSession(CLIExecutionContext& context)
 {
-    std::optional<SessionOptions> options = std::nullopt;
-    context.Data.Add<Data::Session>(SessionService::CreateSession(options));
+    context.Data.Add<Data::Session>(SessionService::CreateSession());
 }
 
 void ListSessions(CLIExecutionContext& context)
